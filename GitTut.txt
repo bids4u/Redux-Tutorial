@@ -1,0 +1,79 @@
+VCS(Version Control System)
+Vcs provide you eith proper decision
+what exactly was changed
+when it was changed
+And hence you can analyse how your project evolved with version
+Version Control Tools
+-git
+-subversion
+-cvs
+-mercurial
+
+Git
+Git is a distributed version control that supports distributed non linear workflows
+by providing data assurance for developing quality software.
+Features of git
+distributed,compatible,non-linear,branching,lightweight,
+speed,opensource,reliable,secure,economical
+Repository
+directory or storage of project
+Two types of repo-Local & Central
+
+Git Operations and command
+Creating Repository
+git init
+
+making changes
+status, add , commit
+
+parallel development
+branch , merge, rebase
+
+Syncing repo
+add origin,push,pull
+
+To intialize git
+git init
+
+To pull code
+git pull "url"
+
+Tells you which files are added to index and already commited
+git status
+
+Lets you add file to index
+git add
+git add -A(to add all files)
+
+to show message of commit
+git commit -m ""
+git commit -a -m ""(adding multiple files)
+
+to show how these are added
+git log
+
+parallel developing
+git branch anyname
+to move to branch
+git checkout anyname
+yo move to master
+git checkout master
+merging the changes
+git merge
+
+rebase is done to add history of branck to master
+git checkout branchname
+git rebase master
+
+Push changes
+ssh-keygen
+ssh -T git@github.com
+
+to push branch
+git push origin branchname
+
+reverting to previous version
+
+To push your code
+git remote add origin url
+git push -u origin master

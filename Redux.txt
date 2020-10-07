@@ -1,0 +1,132 @@
+*Redux
+Redux is  a predictable state container for javascript app.
+It is for javascript app.
+It is a state container.
+It is predicatable.
+
+
+*Redux is for javascript application.
+Redux is not tied to React.
+Can be used with React , Angular, Vue or even vanilla javascript.
+Redux is a library for javascript application.
+
+*Redux is a state container
+Redux stores state of an application.
+consider a react app -state of an apllication.
+State of an app is the state represented by all individual component of app.
+Redux will store and manage the application state.
+LoginFormComponent
+state={
+    username:'',
+    password;"",
+    submitting:false
+}
+
+*Redux is predicatable.
+predicatable. in what way?
+Redux is a state container.
+The state of an application can change.
+Eg.todo list app- item(pending) -> item(completed)
+In redux , all state transitions are explicit and it is possible to keep track of them.
+The changes to your application's state become predicatable.
+
+#Why use redux?
+manage the state of your application in a predictable way, redux can help you.
+#why use redux in react app?
+Components in React have their own state.
+Why do we need another tool to manage state?
+yes
+React context-Prevents prop driling
+useContext + useReducer?
+Redux 1.0 - August 2015
+
+React-Redux
+React-Redux is official ReduxUI binding library or React.
+
+
+**Three core concept in React
+Three principles
+
+First principles
+The state of youe whole application is stored in an object tree within a single store.
+Maintain our application state in a single object which would be managed by redux store.
+Second principles
+ The only way to change the state is to emit an action ,an object describing what happened .
+ To update state of your app, you need to let redux know about that with action.
+ Not allowed to directly update the state object.
+Third Principle
+to specify how the state tree is transformed by actions, you write pure reducers.
+Reducer-(previousstate,action )=>new state
+
+javascriptapp--(dispatch)-->Action---->Reducer----->Redux Store(state)--(subscribed)-->javascriptapp
+
+
+#Actions
+Only way your application can interact with store.
+carry some information from your app to the redux store.
+plain javascript objects
+Have a type property that indicates the type of action being performed.
+The type property is typically defined as string constants.
+#Reducers
+Specify how the app's state changes in response to actions sent to store.
+Fucntion that accepts state  and action as argument and return the next state of the application.
+(previousstate,action)=>newState
+
+#Redux store
+One store for the entire application
+Responsiblities-
+-Hold application state
+-Allow access to state via getState()
+-Allow state to update via dispatch(action)
+-Register listener via subscribe(listener)
+-Handles unregistering of listener via the Fucntion returned by subscribe(listener)  
+
+#Middlewares
+Is the suggested way to extend redux with custom functionality
+
+#Actions
+Synchronous Actions
+A soon as action was dispatched , the state was immediately updated.
+If you dispatch the BUY_CAKE action , the numOfCakes was right way decremented by 1.
+Same with BUY_ICECREAM action as well.
+
+Assync Actions
+Asynchronous api calls to fetch data from an end point and use that data in your application.
+
+Our application
+Fetches a list of users from an API end point  and store it in redux store.
+State?
+Action?
+Reducer?
+
+*STATE
+state={
+    loading:true,
+    data:[],
+    error:''
+}
+loading-Display a loading spinner n your component
+data-list of users
+error-Display error to user
+
+*ACTION
+FETCH_USERS_REQUEST-fetch list of users
+FETCH_USERS_SUCCESS-fetched successfully
+FETCH_USERS_FAILURE-Error fetching the data
+
+*REDUCER
+case:FETCH_USERS_REQUEST
+    loading:true
+case:FETCH_USERS_SUCCESS
+    loading:false
+    user:data(from api)
+case:FETCH_USERS_FAILURE
+    loading:false
+    error:error(from API)
+
+#Async Action Creators
+axios
+Request to an api end point
+redux-thunk
+Define async action creators
+Middleware 
